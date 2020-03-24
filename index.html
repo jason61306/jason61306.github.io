@@ -4,13 +4,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <script src="https://unpkg.com/wavesurfer.js"></script>
     </head>
-    <div id="waveform"></div>
+    <div id="ccheer"></div>
+    <div id="Queen"></div>
     <script>
-        var wavesurfer = WaveSurfer.create({
-            container: '#waveform',
+        var ccheer = WaveSurfer.create({
+            container: '#ccheer',
             waveColor: 'violet',
             progressColor: 'purple'
         });
-        wavesurfer.load('ccheer.wav');
+        ccheer.load('ccheer.wav');
+        var Queen = WaveSurfer.create({
+            container: '#Queen',
+            waveColor: 'violet',
+            progressColor: 'red'
+        });
+        ccheer.load('Queen.wav');
     </script>   
 </html>
