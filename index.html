@@ -5,6 +5,7 @@
         <script src="https://unpkg.com/wavesurfer.js"></script>
     </head>
     <div id="ccheer"></div>
+    <br>
     <div id="Queen"></div>
     <script>
         var ccheer = WaveSurfer.create({
@@ -15,7 +16,7 @@
         ccheer.load('ccheer.wav');
         var Queen = WaveSurfer.create({
             container: '#Queen',
-            waveColor: 'violet',
+            waveColor: 'red',
             progressColor: 'red'
         });
         ccheer.load('Queen.wav');
