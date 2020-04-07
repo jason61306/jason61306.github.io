@@ -6,18 +6,37 @@
     </head>
     <div id="ccheer"></div>
     <div id="Queen"></div>
+    <div id="microphone"></div>
     <script>
+         // ccheer
         var ccheer = WaveSurfer.create({
             container: '#ccheer',
             waveColor: 'violet',
             progressColor: 'purple'
         });
         ccheer.load('ccheer.wav');
+        // Queen
         var Queen = WaveSurfer.create({
             container: '#Queen',
             waveColor: 'red',
             progressColor: 'red'
         });
         Queen.load('Queen.wav');
+        // microphone
+        var microphone = WaveSurfer.create({
+            container     : '#microphone',
+            waveColor     : 'black',
+            plugins: [
+                WaveSurfer.microphone.create()
+            ]
+        });
+        wavesurfer.microphone.on('deviceReady', function(stream) {
+            console.log('Device ready!', stream);
+        });
+        wavesurfer.microphone.on('deviceError', function(code) {
+            console.warn('Device error: ' + code);
+        });
+        // start the microphone
+        wavesurfer.microphone.start();
     </script>   
 </html>
