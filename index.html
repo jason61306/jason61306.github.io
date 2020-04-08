@@ -31,13 +31,13 @@
                 WaveSurfer.microphone.create()
             ]
         });
-        wavesurfer.microphone.on('deviceReady', function(stream) {
+        WaveSurfer.microphone.on('deviceReady', function(stream) {
             console.log('Device ready!', stream);
         });
-        wavesurfer.microphone.on('deviceError', function(code) {
+        WaveSurfer.microphone.on('deviceError', function(code) {
             console.warn('Device error: ' + code);
         });
         // start the microphone
-        wavesurfer.microphone.start();
+        WaveSurfer.microphone.start();
     </script>   
 </html>
