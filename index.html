@@ -26,10 +26,22 @@
         // microphone
         var microphone = WaveSurfer.create({
             container     : '#microphone',
-            waveColor     : 'black',
-            plugins: [
-                WaveSurfer.microphone.create()
-            ]
+           waveColor: 'black',
+                interact: false,
+                cursorWidth: 0,
+                audioContext: context || null,
+                audioScriptProcessor: processor || null,
+                plugins: [
+                    WaveSurfer.microphone.create({
+                        bufferSize: 4096,
+                        numberOfInputChannels: 1,
+                        numberOfOutputChannels: 1,
+                        constraints: {
+                            video: false,
+                            audio: true
+                        }
+                    })
+                ]
         });
         microphone.microphone.on('deviceReady', function(stream) {
             console.log('Device ready!', stream);
